@@ -2,11 +2,11 @@
 stoneW = 27;
 stoneL = 27;
 baseH = 2;
-rimH = 2;
-roofH = 35;
+//rimH = 2;
+//roofH = 35;
 symbolL = 18;
 symbolH = 1;
-wall = 1;
+//wall = 1;
 
 
 

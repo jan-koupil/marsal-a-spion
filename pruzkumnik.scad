@@ -9,27 +9,20 @@ symbolH = 1;
 wall = 1;
 
 
-ratio = 17.304/17.619; //(SVG X:Y ratio) 
 
-use <modules/stone.scad>;
-
-//color("green")
-//stone(
-//    stoneW = stoneW,
-//    stoneL = stoneL,
-//    baseH = baseH,
-//    rimH = rimH,
-//    roofH = roofH,
-//    wall = wall
-//);
-
-cube([stoneW,stoneL,2]);
+color("green")
+    cube([stoneW, stoneL, 2]);
 
 color("red")
-translate([-11, 42, baseH / 2])
-    linear_extrude(height = symbolH+baseH / 2, center = false, convexity = 00, twist = 0)
-        resize([0,symbolL,0], auto=true)
-            horse();
+      translate([-11, 42, baseH / 2])
+          linear_extrude(
+            height = symbolH+baseH / 2, 
+            center = false, 
+            convexity = 10, 
+            twist = 0
+      )
+          resize([0,symbolL,0], auto=true)
+              horse();
             
 // Group ID: layer1
 module horse() {

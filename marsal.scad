@@ -1,6 +1,6 @@
 stoneW = 27;
 stoneL = 27;
-baseH = 3;
+baseH = 4;
 wall = 1.5;
 h1 = 20;
 alpha1 = 60;

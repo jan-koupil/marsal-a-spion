@@ -1,15 +1,22 @@
-stone(    
-    stoneW = 27,
-    stoneL = 27,
-    baseH = 3,
-    wall = 1.5,
-    h1 = 20,
-    alpha1 = 60,
-    alpha2 = 30,
-    alpha3 = 15,
-    hollow = false
-);
+//stone(    
+//    stoneW = 27,
+//    stoneL = 27,
+//    baseH = 3,
+//    wall = 1.5,
+//    h1 = 20,
+//    alpha1 = 60,
+//    alpha2 = 89.999,
+//    alpha3 = 15,
+//    tileDeep = 5,
+//    hollow = false,
+//    
+//    symbolName = "general",
+//    symbolL = 18,
+//    symbolYOffset = 2,
+//    symbolH = 1
+//);
 
+use <symbol.scad>; 
 
 module stone(
     stoneW,
@@ -20,19 +27,23 @@ module stone(
     alpha1,
     alpha2,
     alpha3,
+    tileDeep = 0,
     safeSpace = 0.001,
     cropMinDim = 50,
-    hollow = true //fill in the "stone"
-    
-){
-    
+    hollow = true, //fill in the "stone"
+
+    symbolName,
+    symbolL,
+    symbolYOffset,
+    symbolH    
+){    
     cropThick = max(stoneL / cos(alpha1), cropMinDim);
     backL = h1 / sin(alpha1);
     midY = stoneL - h1 / tan(alpha1);
     roofL = stoneL / cos(alpha3) * 2;
     maxHeight = stoneL / cos(alpha1);
     
-    symbolMaxL = stoneL / cos(alpha2);
+    symbolMaxL = abs(stoneL / cos(alpha2));
     symbolThick = max (stoneL * sin(alpha2), stoneL); 
     cropBackL = 2*stoneL / cos(alpha1);   
     
@@ -63,10 +74,22 @@ module stone(
 
             tileThick = hollow ? wall : symbolThick;
 
-            color("yellow")
-            rotate([alpha2,0,0])
-                translate([0,0,-tileThick])
-                    cube([stoneW, symbolMaxL, tileThick]);
+            translate([0,tileDeep,0])
+                rotate([alpha2,0,0])
+                    
+                    
+                    union(){
+                        color("yellow")
+                        translate([0,0,-tileThick]) 
+                            cube([stoneW, symbolMaxL, tileThick]);
+                        symbol(
+                            symbolName = symbolName,
+                            symbolL = symbolL,
+                            yOffset = symbolYOffset ,
+                            symbolH = symbolH,
+                            tileW = stoneW
+                        );
+                    };
         }
 
         translate([0,stoneL,0])

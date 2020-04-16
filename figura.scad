@@ -4,20 +4,21 @@ baseH = 4;
 wall = 1.5;
 h1 = 20;
 alpha1 = 60;
-alpha2 = 53;
+alpha2 = 89.9;
 alpha3 = 15;
 
+hollow = true;
+tileDeep = 5;
+
+symbolName = "general";
 symbolL = 16;
+symbolYOffset = 2.5;
 symbolH = 1;
 
-ratio = 17.477/16.854; //(SVG X:Y ratio) 
-imageFile = "grafika/general.svg";
-
 use <modules/stone.scad>;
-use <modules/symbol.scad>;
 
-//color("green")
-stone(
+
+stone(    
     stoneW = stoneW,
     stoneL = stoneL,
     baseH = baseH,
@@ -26,21 +27,11 @@ stone(
     alpha1 = alpha1,
     alpha2 = alpha2,
     alpha3 = alpha3,
-    hollow = false
-);
-
-
-tileL = stoneL * sin(alpha1) / sin(180-alpha1-alpha2) - wall / cos(90-alpha1-alpha2);
-
-color("red")
-rotate([alpha2,0,0])
-    symbol(
-        symbolName = "general",
-        symbolL = symbolL,
-        yOffset = 0,
-        symbolH = symbolH,
-        tileW = stoneW,
-        tileL = tileL
-    );
-
-            
+    tileDeep = tileDeep,
+    hollow = hollow,
+    
+    symbolName = symbolName,
+    symbolL = symbolL,
+    symbolYOffset = symbolYOffset,
+    symbolH = symbolH
+);    

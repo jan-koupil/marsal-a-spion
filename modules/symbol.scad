@@ -3,7 +3,8 @@ symbol(
     symbolL = 18,
     yOffset = 0,
     symbolH = 1,
-    tileW = 25
+    tileW = 25,
+    tryFix = true
 );
 
 
@@ -13,8 +14,9 @@ module symbol(
     yOffset = 0,
     symbolH,
     tileW,
-//    tileL,
-    dir = "../grafika/"
+    dir = "../grafika/",
+    
+    tryFix = false
 ){    
     imageFile = str(dir, symbolName, ".svg");
     
@@ -43,13 +45,12 @@ module symbol(
             19.489/18.707
         : 1;
         
-        echo (imageFile);
+    fixOffset = tryFix ? 0.05 : 0;
     
     color("red")
-//    translate([(tileW - symbolL * ratio) / 2,(tileL - symbolL) / 2 + yOffset,0])
     translate([(tileW - symbolL * ratio) / 2, yOffset,0])
         linear_extrude(height = symbolH, center = false, convexity = 10, twist = 0)
-            offset (r=0.05) offset (r=-0.05)
+            offset (r=fixOffset) offset (r=-fixOffset)
                 resize([0, symbolL,0], auto=true)
                     import(imageFile);           
 }

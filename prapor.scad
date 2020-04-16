@@ -1,30 +1,21 @@
-
-stoneW = 27;
-stoneL = 27;
-baseH = 2;
-rimH = 2;
-roofH = 35;
-symbolL = 18;
-symbolH = 1;
-wall = 1;
-
-
-ratio = 19.096/19.459; //(SVG X:Y ratio) 
-
 use <modules/stone.scad>;
 
-color("green")
-stone(
-    stoneW = stoneW,
-    stoneL = stoneL,
-    baseH = baseH,
-    rimH = rimH,
-    roofH = roofH,
-    wall = wall
-);
+stone(    
+    stoneW = 27,
+    stoneL = 27,
+    baseH = 4,
+    wall = 1.5,
+    h1 = 20,
+    alpha1 = 60,
+    alpha2 = 89.999,
+    alpha3 = 15,
 
-color("red")
-translate([(stoneW - symbolL * ratio) / 2,(stoneL - symbolL) / 2,baseH])
-    linear_extrude(height = symbolH, center = false, convexity = 10, twist = 0)
-        resize([0,symbolL,0], auto=true)
-            import("grafika/prapor.svg");
+    hollow = true,
+    tileDeep = 5,
+
+    symbolName = "prapor",
+    symbolL = 17,
+    symbolYOffset = 2.25,
+    symbolH = 1,
+    tryFix = false
+);    

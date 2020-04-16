@@ -1,20 +1,21 @@
-//stone(    
-//    stoneW = 27,
-//    stoneL = 27,
-//    baseH = 3,
-//    wall = 1.5,
-//    h1 = 20,
-//    alpha1 = 60,
-//    alpha2 = 89.999,
-//    alpha3 = 15,
-//    tileDeep = 5,
-//    hollow = false,
-//    
-//    symbolName = "general",
-//    symbolL = 18,
-//    symbolYOffset = 2,
-//    symbolH = 1
-//);
+stone(    
+    stoneW = 27,
+    stoneL = 27,
+    baseH = 3,
+    wall = 1.5,
+    h1 = 20,
+    alpha1 = 60,
+    alpha2 = 89.999,
+    alpha3 = 15,
+    tileDeep = 5,
+    hollow = false,
+    
+    symbolName = "general",
+    symbolL = 18,
+    symbolYOffset = 2,
+    symbolH = 1,
+    tryFix = false
+);
 
 use <symbol.scad>; 
 
@@ -35,7 +36,8 @@ module stone(
     symbolName,
     symbolL,
     symbolYOffset,
-    symbolH    
+    symbolH,
+    tryFix
 ){    
     cropThick = max(stoneL / cos(alpha1), cropMinDim);
     backL = h1 / sin(alpha1);
@@ -43,7 +45,7 @@ module stone(
     roofL = stoneL / cos(alpha3) * 2;
     maxHeight = stoneL / cos(alpha1);
     
-    symbolMaxL = abs(stoneL / cos(alpha2));
+    symbolMaxL = min(abs(stoneL / cos(alpha2)), 2*stoneL);
     symbolThick = max (stoneL * sin(alpha2), stoneL); 
     cropBackL = 2*stoneL / cos(alpha1);   
     
@@ -87,7 +89,8 @@ module stone(
                             symbolL = symbolL,
                             yOffset = symbolYOffset ,
                             symbolH = symbolH,
-                            tileW = stoneW
+                            tileW = stoneW,
+                            tryFix = tryFix
                         );
                     };
         }

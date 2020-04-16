@@ -28,6 +28,7 @@ cube([stoneW,stoneL,2]);
 color("red")
 translate([-11, 42, baseH / 2])
     linear_extrude(height = symbolH+baseH / 2, center = false, convexity = 00, twist = 0)
+    offset (r=0.1) offset (r=-0.1)
         resize([0,symbolL,0], auto=true)
             horse();
             

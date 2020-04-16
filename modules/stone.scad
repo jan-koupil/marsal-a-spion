@@ -1,13 +1,13 @@
-//stone(    
-//    stoneW = 27,
-//    stoneL = 27,
-//    baseH = 3,
-//    wall = 1.5,
-//    h1 = 20,
-//    alpha1 = 60,
-//    alpha2 = 30,
-//    alpha3 = 15
-//);
+stone(    
+    stoneW = 27,
+    stoneL = 27,
+    baseH = 3,
+    wall = 1.5,
+    h1 = 20,
+    alpha1 = 60,
+    alpha2 = 30,
+    alpha3 = 15
+);
 
 
 module stone(
@@ -20,7 +20,8 @@ module stone(
     alpha2,
     alpha3,
     safeSpace = 0.001,
-    cropMinDim = 50
+    cropMinDim = 50,
+    hollow = true //fill in the "stone"
     
 ){
     
@@ -31,7 +32,7 @@ module stone(
     maxHeight = stoneL / cos(alpha1);
     
     symbolMaxL = stoneL / cos(alpha2);
-    symbolThick = stoneL * sin(alpha2); 
+    symbolThick = max (stoneL * sin(alpha2), stoneL); 
     cropBackL = 2*stoneL / cos(alpha1);   
     
     difference() {
@@ -59,11 +60,12 @@ module stone(
                 translate([stoneL - wall,0,0])
                     cube([wall,stoneL, maxHeight]);
 
+            tileThick = hollow ? wall : symbolThick;
 
             color("yellow")
             rotate([alpha2,0,0])
-                translate([0,0,-symbolThick])
-                    cube([stoneW, symbolMaxL, symbolThick]);
+                translate([0,0,-tileThick])
+                    cube([stoneW, symbolMaxL, tileThick]);
         }
 
         translate([0,stoneL,0])

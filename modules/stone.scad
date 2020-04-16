@@ -81,11 +81,14 @@ module stone(
                     cube([stoneW + 2*safeSpace, roofL, cropThick]); 
 
        
-        translate([-safeSpace, -cropThick,0])
-            cube([stoneW + 2*safeSpace, cropThick, maxHeight]);              
+        translate([-safeSpace, -cropThick, - maxHeight])
+            cube([stoneW + 2*safeSpace, cropThick, 2 * maxHeight]);              
       
-        translate([-safeSpace, 0, -cropThick-baseH])
-            cube([stoneW + 2*safeSpace, stoneL, cropThick]); 
+        translate([-safeSpace, -safeSpace, -cropThick-baseH])
+            cube([stoneW + 2*safeSpace, stoneL + 2*safeSpace, cropThick]); 
+
+        translate([-safeSpace, stoneL, -cropThick-baseH])
+            cube([stoneW + 2*safeSpace, 3*stoneL, 2 *cropThick]); 
         
     }
 

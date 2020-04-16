@@ -10,11 +10,11 @@ alpha3 = 15;
 symbolL = 16;
 symbolH = 1;
 
-
-ratio = 12.3/19.249; //(SVG X:Y ratio)
-imageFile = "grafika/kapitan.svg";
+ratio = 17.477/16.854; //(SVG X:Y ratio) 
+imageFile = "grafika/general.svg";
 
 use <modules/stone.scad>;
+use <modules/symbol.scad>;
 
 //color("green")
 stone(
@@ -25,7 +25,8 @@ stone(
     h1 = h1,
     alpha1 = alpha1,
     alpha2 = alpha2,
-    alpha3 = alpha3
+    alpha3 = alpha3,
+    hollow = false
 );
 
 
@@ -33,8 +34,13 @@ tileL = stoneL * sin(alpha1) / sin(180-alpha1-alpha2) - wall / cos(90-alpha1-alp
 
 color("red")
 rotate([alpha2,0,0])
-translate([(stoneW - symbolL * ratio) / 2,(tileL - symbolL) / 2,0])
-    linear_extrude(height = symbolH, center = false, convexity = 10, twist = 0)
-        offset (r=0.05) offset (r=-0.05)
-        resize([0,symbolL,0], auto=true)
-            import(imageFile);           
+    symbol(
+        symbolName = "general",
+        symbolL = symbolL,
+        yOffset = 0,
+        symbolH = symbolH,
+        tileW = stoneW,
+        tileL = tileL
+    );
+
+            

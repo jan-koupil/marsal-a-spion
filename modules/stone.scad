@@ -6,7 +6,8 @@ stone(
     h1 = 20,
     alpha1 = 60,
     alpha2 = 30,
-    alpha3 = 15
+    alpha3 = 15,
+    hollow = false
 );
 
 

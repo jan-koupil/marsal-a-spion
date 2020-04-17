@@ -17,5 +17,5 @@ stone(
     symbolL = 17,
     symbolYOffset = 2.25,
     symbolH = 1,
-    tryFix = false
+    tryFix = true
 );    

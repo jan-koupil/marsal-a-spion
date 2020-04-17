@@ -49,6 +49,7 @@ module stone(
     symbolThick = max (stoneL * sin(alpha2), stoneL); 
     cropBackL = 2*stoneL / cos(alpha1);   
     
+    rotate ([180+alpha1,0,180])
     difference() {
         union(){
             color("green")

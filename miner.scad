@@ -1,5 +1,6 @@
 use <modules/stone.scad>;
 
+rotate ([0])
 stone(    
     stoneW = 27,
     stoneL = 27,

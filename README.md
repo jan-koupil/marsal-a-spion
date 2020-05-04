@@ -1,5 +1,5 @@
 # marsal-a-spion
-Zde se nachází zdrojové OpenSCAD i tiskové STL soubory pro kameny ke staré, ale ne tak úplně špatné hře.
+Zde se nachází zdrojové OpenSCAD i tiskové STL soubory pro kameny ke staré, ale ne tak úplně špatné hře. Finální úpravy po tisku (PLA) zajistila obyčejná černá lihovka.
 
 ![Hra Maršál a špión](https://github.com/jan-koupil/marsal-a-spion/blob/master/foto/hotovo.JPG)
 

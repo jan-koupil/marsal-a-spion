@@ -14,8 +14,8 @@ stone(
     tileDeep = 5,
 
     symbolName = "kapitan",
-    symbolL = 17,
-    symbolYOffset = 2.25,
+    symbolL = scale(19),
+    symbolYOffset = 1.85,
     symbolH = 1,
     tryFix = true
 );   

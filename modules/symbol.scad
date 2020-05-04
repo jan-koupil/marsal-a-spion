@@ -7,7 +7,6 @@ symbol(
     tryFix = true
 );
 
-
 module symbol(
     symbolName,
     symbolL,

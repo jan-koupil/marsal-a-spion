@@ -14,8 +14,8 @@ stone(
     tileDeep = 5,
 
     symbolName = "strelec",
-    symbolL = 17,
-    symbolYOffset = 2.25,
+    symbolL = scale(17),
+    symbolYOffset = 2.45,
     symbolH = 1,
     tryFix = true
 );    

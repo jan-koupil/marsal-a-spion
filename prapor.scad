@@ -14,8 +14,8 @@ stone(
     tileDeep = 5,
 
     symbolName = "prapor",
-    symbolL = 17,
-    symbolYOffset = 2.25,
+    symbolL = scale(19.2),
+    symbolYOffset = 1.85,
     symbolH = 1,
     tryFix = true
 );    

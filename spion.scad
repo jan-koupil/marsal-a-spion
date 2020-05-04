@@ -14,8 +14,8 @@ stone(
     tileDeep = 5,
 
     symbolName = "spion",
-    symbolL = 14,
-    symbolYOffset = 3.55,
+    symbolL = scale(17.2),
+    symbolYOffset = 2.65,
     symbolH = 1,
     tryFix = false
 );    

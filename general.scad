@@ -14,8 +14,8 @@ stone(
     tileDeep = 5,
 
     symbolName = "general",
-    symbolL = 17,
-    symbolYOffset = 2.25,
+    symbolL = scale(16.8),
+    symbolYOffset = 2.75,
     symbolH = 1,
     tryFix = true
 );

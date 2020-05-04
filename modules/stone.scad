@@ -19,6 +19,8 @@ stone(
 
 use <symbol.scad>; 
 
+function scale(realHeight) = realHeight / 19 * 18;
+
 module stone(
     stoneW,
     stoneL,

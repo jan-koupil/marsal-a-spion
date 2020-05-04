@@ -14,8 +14,8 @@ stone(
     tileDeep = 5,
 
     symbolName = "kadet",
-    symbolL = 17,
+    symbolL = scale(17.2),
     symbolYOffset = 2.25,
     symbolH = 1,
-    tryFix = false
+    tryFix = true
 );    

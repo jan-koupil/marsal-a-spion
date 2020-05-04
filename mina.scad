@@ -14,8 +14,8 @@ stone(
     tileDeep = 5,
 
     symbolName = "mina",
-    symbolL = 15,
+    symbolL = scale(15.7),
     symbolYOffset = 3.25,
     symbolH = 1,
-    tryFix = false
+    tryFix = true
 );    

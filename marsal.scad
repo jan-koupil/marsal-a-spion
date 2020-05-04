@@ -14,8 +14,8 @@ stone(
     tileDeep = 5,
 
     symbolName = "marsal",
-    symbolL = 17,
-    symbolYOffset = 2.25,
+    symbolL = scale(18.4),
+    symbolYOffset = 1.75,
     symbolH = 1,
-    tryFix = false
+    tryFix = true
 );
